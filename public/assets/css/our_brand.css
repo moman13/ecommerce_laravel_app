@@ -1,0 +1,49 @@
+.our_brand{
+    padding: 70px 0px
+}
+
+.our_brand .our-text{
+    width: 800px ;
+    margin: auto
+}
+
+.our_brand .our-text .title{
+    margin-bottom: 20px
+}
+
+.our_brand .our-text .description
+{
+    line-height: 27px;
+    color: #626262;
+    font-size: 14px;
+    margin-bottom: 60px
+}
+
+.our_brand .our_brand_list .item{
+    width: 100%;
+    height: 200px;
+    border: 1px solid #EEE;
+    -webkit-transition: .2s ease-in-out;
+    -moz-transition: .2s ease-in-out;
+    -o-transition: .2s ease-in-out;
+    transition: .2s ease-in-out;
+    position: relative;
+    margin-bottom: 25px
+}
+
+.our_brand .our_brand_list .item:hover{
+    box-shadow: 0px 0px 5px 5px #EEEE
+}
+
+.our_brand .our_brand_list .item .thump
+{
+    width: 100%;
+   height: 200px
+}
+
+.our_brand .our_brand_list .item .thump img{
+ 
+    width: 100%;
+    height: 100%;
+  
+}

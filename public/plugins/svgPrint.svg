@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"  ?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" 
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg
+	width="100%"
+	height="100%"
+	id="graph"
+	version="1.1"
+	xmlns="http://www.w3.org/2000/svg"
+	viewBox="0 0 100 147"
+	preserveAspectRatio="none">
+	
+		<linearGradient
+			id="gradient5677fc"
+			x1="0"
+			y1="0"
+			x2="0"
+			y2="100%">
+			<stop
+				style="stop-color:#5677fc;stop-opacity:.3;"
+				offset="0" />
+			<stop
+				style="stop-color:#5677fc;stop-opacity:0;"
+				offset="1" />
+		</linearGradient>
+		
+		<linearGradient
+			id="gradientfbc157"
+			x1="0"
+			y1="0"
+			x2="0"
+			y2="100%">
+			<stop
+				style="stop-color:#fbc157;stop-opacity:.3;"
+				offset="0" />
+			<stop
+				style="stop-color:#fbc157;stop-opacity:0;"
+				offset="1" />
+		</linearGradient>
+		
+		<linearGradient
+			id="gradientff0000"
+			x1="0"
+			y1="0"
+			x2="0"
+			y2="100%">
+			<stop
+				style="stop-color:#ff0000;stop-opacity:.3;"
+				offset="0" />
+			<stop
+				style="stop-color:#ff0000;stop-opacity:0;"
+				offset="1" />
+		</linearGradient>
+		
+		<path
+			id="line"
+			stroke-width="2px"
+			vector-effect="non-scaling-stroke"
+			style="fill:url(#gradient5677fc);stroke:#5677fc;"
+			d="m-10,157 l0,-55 l10,0 l9.0909090909091,17 l9.0909090909091,-61 l9.0909090909091,56 l9.0909090909091,-21 l9.0909090909091,42 l9.0909090909091,-78 l9.0909090909091,34 l9.0909090909091,-28 l9.0909090909091,47 l9.0909090909091,18 l9.0909090909091,-110 l10,139 z"
+		/>
+		
+		<path
+			id="line"
+			stroke-width="2px"
+			vector-effect="non-scaling-stroke"
+			style="fill:url(#gradientfbc157);stroke:#fbc157;"
+			d="m-10,157 l0,-76 l10,0 l9.0909090909091,-34 l9.0909090909091,35 l9.0909090909091,65 l9.0909090909091,-30 l9.0909090909091,-27 l9.0909090909091,54 l9.0909090909091,-50 l9.0909090909091,-18 l9.0909090909091,51 l9.0909090909091,-3 l9.0909090909091,-24 l10,57 z"
+		/>
+		
+		<path
+			id="line"
+			stroke-width="2px"
+			vector-effect="non-scaling-stroke"
+			style="fill:url(#gradientff0000);stroke:#ff0000;"
+			d="m-10,157 l0,-16 l10,0 l9.0909090909091,-4 l9.0909090909091,-10 l9.0909090909091,-10 l9.0909090909091,-10 l9.0909090909091,-17 l9.0909090909091,-6 l9.0909090909091,-10 l9.0909090909091,-8 l9.0909090909091,-9 l9.0909090909091,-13 l9.0909090909091,-44 l10,157 z"
+		/>
+		</svg>

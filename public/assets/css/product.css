@@ -1,0 +1,51 @@
+.porduct{
+    padding: 70px 0px
+}
+
+.porduct .item{
+    border: 1px solid #EEE;
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 30px
+}
+
+.porduct .item img{
+    width: 200px;
+    height: 200px;
+}
+
+.porduct .item .details .category{
+    margin-bottom: 4px;
+    font-size: 14px
+}
+
+.porduct .item .details .category a{
+    color: #999999;
+}
+
+.porduct .item .details .title
+{
+    font-size: 1.14286em;
+    font-weight: 500;
+    margin-bottom: 10px;
+    line-height: 1.625;
+    font-weight: 600
+}
+
+.porduct .item .details .title a{
+    color: #222222;
+    -webkit-transition: .2s ease-in-out;
+    -moz-transition: .2s ease-in-out;
+    -o-transition: .2s ease-in-out;
+    transition: .2s ease-in-out;
+}
+
+.porduct .item .details .title a:hover{
+    color: #002FFF
+}
+
+.porduct .item .details .price
+{
+    font-size: 1.42857em;
+    color: #83b735;
+}
