@@ -3,392 +3,547 @@
    <!-- Content Wrapper. Contains page content -->
  @section('title', 'Page Title')
  @section('content')
-   <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        <section class="content-header">
-          <h1>
-            اﻟﺮﺋﻴﺴﻴﺔ
-            <small>ﻟﻮﺣﺔ اﻟﺘﺤﻜﻢ</small>
-          </h1>
-          <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> اﻟﺮﺋﻴﺴﺔ</a></li>
-            <li class="active">ﻟﻮﺣﺔ اﻟﺘﺤﻜﻢ</li>
-          </ol>
-        </section>
+ <div class="main-content">
+              <div class="section__content section__content--p30">
+                  <div class="container-fluid">
+                      <div class="row">
+                          <div class="col-md-12">
+                              <div class="overview-wrap">
+                                  <h2 class="title-1">الاحصائيات العامة</h2>
+                                                                  </div>
+                          </div>
+                      </div>
+                      <div class="row m-t-25">
+                          <div class="col-sm-6 col-lg-3">
+                              <div class="overview-item overview-item--c1">
+                                  <div class="overview__inner">
+                                      <div class="overview-box clearfix">
+                                          <div class="icon">
+                                              <i class="zmdi zmdi-account-o"></i>
+                                          </div>
+                                          <div class="text">
+                                              <h2>10368</h2>
+                                              <span>المتصلين حالاين</span>
+                                          </div>
+                                      </div>
+                                      <div class="overview-chart">
+                                          <canvas id="widgetChart1"></canvas>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-sm-6 col-lg-3">
+                              <div class="overview-item overview-item--c2">
+                                  <div class="overview__inner">
+                                      <div class="overview-box clearfix">
+                                          <div class="icon">
+                                              <i class="zmdi zmdi-shopping-cart"></i>
+                                          </div>
+                                          <div class="text">
+                                              <h2>388,688</h2>
+                                              <span>المبيعات</span>
+                                          </div>
+                                      </div>
+                                      <div class="overview-chart">
+                                          <canvas id="widgetChart2"></canvas>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-sm-6 col-lg-3">
+                              <div class="overview-item overview-item--c3">
+                                  <div class="overview__inner">
+                                      <div class="overview-box clearfix">
+                                          <div class="icon">
+                                              <i class="zmdi zmdi-calendar-note"></i>
+                                          </div>
+                                          <div class="text">
+                                              <h2>1,086</h2>
+                                              <span>الارباح </span>
+                                          </div>
+                                      </div>
+                                      <div class="overview-chart">
+                                          <canvas id="widgetChart3"></canvas>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-sm-6 col-lg-3">
+                              <div class="overview-item overview-item--c4">
+                                  <div class="overview__inner">
+                                      <div class="overview-box clearfix">
+                                          <div class="icon">
+                                              <i class="zmdi zmdi-money"></i>
+                                          </div>
+                                          <div class="text">
+                                              <h2>$1,060,386</h2>
+                                              <span>مجمل الارباح</span>
+                                          </div>
+                                      </div>
+                                      <div class="overview-chart">
+                                          <canvas id="widgetChart4"></canvas>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-lg-6">
+                              <div class="au-card recent-report">
+                                  <div class="au-card-inner">
+                                      <h3 class="title-2">التقارير</h3>
+                                      <div class="chart-info">
+                                          <div class="chart-info__left">
+                                              <div class="chart-note">
+                                                  <span class="dot dot--blue"></span>
+                                                  <span>المنتجات</span>
+                                              </div>
+                                              <div class="chart-note mr-0">
+                                                  <span class="dot dot--green"></span>
+                                                  <span>الخدمات</span>
+                                              </div>
+                                          </div>
+                                          <div class="chart-info__right">
+                                              <div class="chart-statis">
+                                                  <span class="index incre">
+                                                      <i class="zmdi zmdi-long-arrow-up"></i>25%</span>
+                                                  <span class="label">المنتجات</span>
+                                              </div>
+                                              <div class="chart-statis mr-0">
+                                                  <span class="index decre">
+                                                      <i class="zmdi zmdi-long-arrow-down"></i>10%</span>
+                                                  <span class="label">الخدمات</span>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <div class="recent-report__chart">
+                                          <canvas id="recent-rep-chart"></canvas>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-lg-6">
+                              <div class="au-card chart-percent-card">
+                                  <div class="au-card-inner">
+                                      <h3 class="title-2 tm-b-5">الاحصائيات</h3>
+                                      <div class="row no-gutters">
+                                          <div class="col-xl-6">
+                                              <div class="chart-note-wrap">
+                                                  <div class="chart-note mr-0 d-block">
+                                                      <span class="dot dot--blue"></span>
+                                                      <span>المنتجات</span>
+                                                  </div>
+                                                  <div class="chart-note mr-0 d-block">
+                                                      <span class="dot dot--red"></span>
+                                                      <span>الخدمات</span>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                          <div class="col-xl-6">
+                                              <div class="percent-chart">
+                                                  <canvas id="percent-chart"></canvas>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-lg-9">
+                              <h2 class="title-1 m-b-25">المشتريات</h2>
+                              <div class="table-responsive table--no-card m-b-40">
+                                  <table class="table table-borderless table-striped table-earning">
+                                      <thead>
+                                          <tr>
+                                              <th>التاريخ </th>
+                                              <th>السلعه</th>
+                                              <th>الاسم</th>
+                                              <th class="text-right">السعر</th>
+                                              <th class="text-right">الكمية </th>
+                                              <th class="text-right">المجموع</th>
+                                          </tr>
+                                      </thead>
+                                      <tbody>
+                                          <tr>
+                                              <td>2018-09-29 05:57</td>
+                                              <td>100398</td>
+                                              <td>iPhone X 64Gb Grey</td>
+                                              <td class="text-right">$999.00</td>
+                                              <td class="text-right">1</td>
+                                              <td class="text-right">$999.00</td>
+                                          </tr>
+                                          <tr>
+                                              <td>2018-09-28 01:22</td>
+                                              <td>100397</td>
+                                              <td>Samsung S8 Black</td>
+                                              <td class="text-right">$756.00</td>
+                                              <td class="text-right">1</td>
+                                              <td class="text-right">$756.00</td>
+                                          </tr>
+                                          <tr>
+                                              <td>2018-09-27 02:12</td>
+                                              <td>100396</td>
+                                              <td>Game Console Controller</td>
+                                              <td class="text-right">$22.00</td>
+                                              <td class="text-right">2</td>
+                                              <td class="text-right">$44.00</td>
+                                          </tr>
+                                          <tr>
+                                              <td>2018-09-26 23:06</td>
+                                              <td>100395</td>
+                                              <td>iPhone X 256Gb Black</td>
+                                              <td class="text-right">$1199.00</td>
+                                              <td class="text-right">1</td>
+                                              <td class="text-right">$1199.00</td>
+                                          </tr>
+                                          <tr>
+                                              <td>2018-09-25 19:03</td>
+                                              <td>100393</td>
+                                              <td>USB 3.0 Cable</td>
+                                              <td class="text-right">$10.00</td>
+                                              <td class="text-right">3</td>
+                                              <td class="text-right">$30.00</td>
+                                          </tr>
+                                          <tr>
+                                              <td>2018-09-29 05:57</td>
+                                              <td>100392</td>
+                                              <td>Smartwatch 4.0 LTE Wifi</td>
+                                              <td class="text-right">$199.00</td>
+                                              <td class="text-right">6</td>
+                                              <td class="text-right">$1494.00</td>
+                                          </tr>
+                                          <tr>
+                                              <td>2018-09-24 19:10</td>
+                                              <td>100391</td>
+                                              <td>Camera C430W 4k</td>
+                                              <td class="text-right">$699.00</td>
+                                              <td class="text-right">1</td>
+                                              <td class="text-right">$699.00</td>
+                                          </tr>
+                                          <tr>
+                                              <td>2018-09-22 00:43</td>
+                                              <td>100393</td>
+                                              <td>USB 3.0 Cable</td>
+                                              <td class="text-right">$10.00</td>
+                                              <td class="text-right">3</td>
+                                              <td class="text-right">$30.00</td>
+                                          </tr>
+                                      </tbody>
+                                  </table>
+                              </div>
+                          </div>
+                          <div class="col-lg-3">
+                              <h2 class="title-1 m-b-25">الدول</h2>
+                              <div class="au-card au-card--bg-blue au-card-top-countries m-b-40">
+                                  <div class="au-card-inner">
+                                      <div class="table-responsive">
+                                          <table class="table table-top-countries">
+                                              <tbody>
+                                                  <tr>
+                                                      <td>United States</td>
+                                                      <td class="text-right">$119,366.96</td>
+                                                  </tr>
+                                                  <tr>
+                                                      <td>Australia</td>
+                                                      <td class="text-right">$70,261.65</td>
+                                                  </tr>
+                                                  <tr>
+                                                      <td>United Kingdom</td>
+                                                      <td class="text-right">$46,399.22</td>
+                                                  </tr>
+                                                  <tr>
+                                                      <td>Turkey</td>
+                                                      <td class="text-right">$35,364.90</td>
+                                                  </tr>
+                                                  <tr>
+                                                      <td>Germany</td>
+                                                      <td class="text-right">$20,366.96</td>
+                                                  </tr>
+                                                  <tr>
+                                                      <td>France</td>
+                                                      <td class="text-right">$10,366.96</td>
+                                                  </tr>
+                                                  <tr>
+                                                      <td>Australia</td>
+                                                      <td class="text-right">$5,366.96</td>
+                                                  </tr>
+                                                  <tr>
+                                                      <td>Italy</td>
+                                                      <td class="text-right">$1639.32</td>
+                                                  </tr>
+                                              </tbody>
+                                          </table>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-lg-6">
+                              <div class="au-card au-card--no-shadow au-card--no-pad m-b-40">
+                                  <div class="au-card-title" style="background-image:url('images/bg-title-01.jpg');">
+                                      <div class="bg-overlay bg-overlay--blue"></div>
+                                      <h3>
+                                          <i class="zmdi zmdi-account-calendar"></i>26 April, 2018</h3>
+                                      <button class="au-btn-plus">
+                                          <i class="zmdi zmdi-plus"></i>
+                                      </button>
+                                  </div>
+                                  <div class="au-task js-list-load">
+                                      <div class="au-task__title">
+                                          <p>Tasks for John Doe</p>
+                                      </div>
+                                      <div class="au-task-list js-scrollbar3">
+                                          <div class="au-task__item au-task__item--danger">
+                                              <div class="au-task__item-inner">
+                                                  <h5 class="task">
+                                                      <a href="#">Meeting about plan for Admin Template 2018</a>
+                                                  </h5>
+                                                  <span class="time">10:00 AM</span>
+                                              </div>
+                                          </div>
+                                          <div class="au-task__item au-task__item--warning">
+                                              <div class="au-task__item-inner">
+                                                  <h5 class="task">
+                                                      <a href="#">Create new task for Dashboard</a>
+                                                  </h5>
+                                                  <span class="time">11:00 AM</span>
+                                              </div>
+                                          </div>
+                                          <div class="au-task__item au-task__item--primary">
+                                              <div class="au-task__item-inner">
+                                                  <h5 class="task">
+                                                      <a href="#">Meeting about plan for Admin Template 2018</a>
+                                                  </h5>
+                                                  <span class="time">02:00 PM</span>
+                                              </div>
+                                          </div>
+                                          <div class="au-task__item au-task__item--success">
+                                              <div class="au-task__item-inner">
+                                                  <h5 class="task">
+                                                      <a href="#">Create new task for Dashboard</a>
+                                                  </h5>
+                                                  <span class="time">03:30 PM</span>
+                                              </div>
+                                          </div>
+                                          <div class="au-task__item au-task__item--danger js-load-item">
+                                              <div class="au-task__item-inner">
+                                                  <h5 class="task">
+                                                      <a href="#">Meeting about plan for Admin Template 2018</a>
+                                                  </h5>
+                                                  <span class="time">10:00 AM</span>
+                                              </div>
+                                          </div>
+                                          <div class="au-task__item au-task__item--warning js-load-item">
+                                              <div class="au-task__item-inner">
+                                                  <h5 class="task">
+                                                      <a href="#">Create new task for Dashboard</a>
+                                                  </h5>
+                                                  <span class="time">11:00 AM</span>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <div class="au-task__footer">
+                                          <button class="au-btn au-btn-load js-load-btn">المزيد</button>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-lg-6">
+                              <div class="au-card au-card--no-shadow au-card--no-pad m-b-40">
+                                  <div class="au-card-title" style="background-image:url('images/bg-title-02.jpg');">
+                                      <div class="bg-overlay bg-overlay--blue"></div>
+                                      <h3>
+                                          <i class="zmdi zmdi-comment-text"></i>الرسائل</h3>
+                                      <button class="au-btn-plus">
+                                          <i class="zmdi zmdi-plus"></i>
+                                      </button>
+                                  </div>
+                                  <div class="au-inbox-wrap js-inbox-wrap">
+                                      <div class="au-message js-list-load">
+                                          <div class="au-message__noti">
+                                              <p>You Have
+                                                  <span>2</span>
 
-        <!-- Main content -->
-        <section class="content">
-          <!-- Small boxes (Stat box) -->
-          <div class="row">
-            <div class="col-lg-3 col-xs-6">
-              <!-- small box -->
-              <div class="small-box bg-aqua">
-                <div class="inner">
-                  <h3>23</h3>
-                  <p>ﻓﺤﺺ ﺟﺪﻳﺪ</p>
-                </div>
-                <div class="icon">
-                  <i class="ion ion-bag"></i>
-                </div>
-                <a href="#" class="small-box-footer">اﻟﺘﻔﺎﺻﻴﻞ <i class="fa fa-arrow-circle-left"></i></a>
-              </div>
-            </div><!-- ./col -->
-            <div class="col-lg-3 col-xs-6">
-              <!-- small box -->
-              <div class="small-box bg-green">
-                <div class="inner">
-                  <h3>53<sup style="font-size: 20px">%</sup></h3>
-                  <p>ﻓﺤﻮﺻﺎﺕ ﺷﻬﺮﻳﺔ</p>
-                </div>
-                <div class="icon">
-                  <i class="ion ion-stats-bars"></i>
-                </div>
-                <a href="#" class="small-box-footer">اﻟﺘﻔﺎﺻﻴﻞ <i class="fa fa-arrow-circle-left"></i></a>
-              </div>
-            </div><!-- ./col -->
-            <div class="col-lg-3 col-xs-6">
-              <!-- small box -->
-              <div class="small-box bg-yellow">
-                <div class="inner">
-                  <h3>22</h3>
-                  <p>ﺯﺑﻮﻥ ﺷﻬﺮﻳﺎ</p>
-                </div>
-                <div class="icon">
-                  <i class="ion ion-person-add"></i>
-                </div>
-                <a href="#" class="small-box-footer">اﻟﺘﻔﺎﺻﻴﻞ <i class="fa fa-arrow-circle-left"></i></a>
-              </div>
-            </div><!-- ./col -->
-            <div class="col-lg-3 col-xs-6">
-              <!-- small box -->
-              <div class="small-box bg-red">
-                <div class="inner">
-                  <h3>12</h3>
-                  <p>ﺷﺮﻛﺎﺕ</p>
-                </div>
-                <div class="icon">
-                  <i class="ion ion-pie-graph"></i>
-                </div>
-                <a href="#" class="small-box-footer">اﻟﺘﻔﺎﺻﻴﻞ <i class="fa fa-arrow-circle-left"></i></a>
-              </div>
-            </div><!-- ./col -->
-          </div><!-- /.row -->
-          <!-- Main row -->
-          <div class="row">
-            <!-- Left col -->
-            <section class="col-lg-7 connectedSortable">
-              <!-- Custom tabs (Charts with tabs)-->
-              <div class="nav-tabs-custom">
-                <!-- Tabs within a box -->
-                <ul class="nav nav-tabs pull-right">
-                  <li class="active"><a href="#revenuew-chart" data-toggle="tab">ﻣﺴﺎﺣﺔ</a></li>
-                  <li><a href="#sales-chart" data-toggle="tab">ﻧﻘﺎﻁ</a></li>
-                  <li class="pull-left header"><i class="fa fa-inbox"></i> ﻓﺤﻮﺻﺎﺕ</li>
-                </ul>
-                <div class="tab-content no-padding">
-                  <!-- Morris chart - Sales -->
-                  <div class="chart tab-pane active" id="revenue-chart" style="position: relative; height: 300px;"></div>
-                  <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 300px;"></div>
-                </div>
-              </div><!-- /.nav-tabs-custom -->
-
-              <!-- Chat box -->
-              <div class="box box-success" id="app">
-                <div class="box-header">
-                  <i class="fa fa-comments-o"></i>
-                  <h3 class="box-title">ﺩﺭﺩﺷﺔ</h3>
-                  <div class="box-tools pull-left" data-toggle="tooltip" title="Status">
-                    <div class="btn-group" data-toggle="btn-toggle" >
-                      <button type="button" class="btn btn-default btn-sm active"><i class="fa fa-square text-green"></i></button>
-                      <button type="button" class="btn btn-default btn-sm"><i class="fa fa-square text-red"></i></button>
-                    </div>
+                                                  new messages
+                                              </p>
+                                          </div>
+                                          <div class="au-message-list">
+                                              <div class="au-message__item unread">
+                                                  <div class="au-message__item-inner">
+                                                      <div class="au-message__item-text">
+                                                          <div class="avatar-wrap">
+                                                              <div class="avatar">
+                                                                  <img src="adminStyle/images/icon/avatar-02.jpg" alt="John Smith">
+                                                              </div>
+                                                          </div>
+                                                          <div class="text">
+                                                              <h5 class="name">John Smith</h5>
+                                                              <p>Have sent a photo</p>
+                                                          </div>
+                                                      </div>
+                                                      <div class="au-message__item-time">
+                                                          <span>12 Min ago</span>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                              <div class="au-message__item unread">
+                                                  <div class="au-message__item-inner">
+                                                      <div class="au-message__item-text">
+                                                          <div class="avatar-wrap online">
+                                                              <div class="avatar">
+                                                                  <img src="adminStyle/images/icon/avatar-03.jpg" alt="Nicholas Martinez">
+                                                              </div>
+                                                          </div>
+                                                          <div class="text">
+                                                              <h5 class="name">Nicholas Martinez</h5>
+                                                              <p>You are now connected on message</p>
+                                                          </div>
+                                                      </div>
+                                                      <div class="au-message__item-time">
+                                                          <span>11:00 PM</span>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                              <div class="au-message__item">
+                                                  <div class="au-message__item-inner">
+                                                      <div class="au-message__item-text">
+                                                          <div class="avatar-wrap online">
+                                                              <div class="avatar">
+                                                                  <img src="adminStyle/images/icon/avatar-04.jpg" alt="Michelle Sims">
+                                                              </div>
+                                                          </div>
+                                                          <div class="text">
+                                                              <h5 class="name">Michelle Sims</h5>
+                                                              <p>Lorem ipsum dolor sit amet</p>
+                                                          </div>
+                                                      </div>
+                                                      <div class="au-message__item-time">
+                                                          <span>Yesterday</span>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                              <div class="au-message__item">
+                                                  <div class="au-message__item-inner">
+                                                      <div class="au-message__item-text">
+                                                          <div class="avatar-wrap">
+                                                              <div class="avatar">
+                                                                  <img src="adminStyle/images/icon/avatar-05.jpg" alt="Michelle Sims">
+                                                              </div>
+                                                          </div>
+                                                          <div class="text">
+                                                              <h5 class="name">Michelle Sims</h5>
+                                                              <p>Purus feugiat finibus</p>
+                                                          </div>
+                                                      </div>
+                                                      <div class="au-message__item-time">
+                                                          <span>Sunday</span>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                              <div class="au-message__item js-load-item">
+                                                  <div class="au-message__item-inner">
+                                                      <div class="au-message__item-text">
+                                                          <div class="avatar-wrap online">
+                                                              <div class="avatar">
+                                                                  <img src="adminStyle/images/icon/avatar-04.jpg" alt="Michelle Sims">
+                                                              </div>
+                                                          </div>
+                                                          <div class="text">
+                                                              <h5 class="name">Michelle Sims</h5>
+                                                              <p>Lorem ipsum dolor sit amet</p>
+                                                          </div>
+                                                      </div>
+                                                      <div class="au-message__item-time">
+                                                          <span>Yesterday</span>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                              <div class="au-message__item js-load-item">
+                                                  <div class="au-message__item-inner">
+                                                      <div class="au-message__item-text">
+                                                          <div class="avatar-wrap">
+                                                              <div class="avatar">
+                                                                  <img src="adminStyle/images/icon/avatar-05.jpg" alt="Michelle Sims">
+                                                              </div>
+                                                          </div>
+                                                          <div class="text">
+                                                              <h5 class="name">Michelle Sims</h5>
+                                                              <p>Purus feugiat finibus</p>
+                                                          </div>
+                                                      </div>
+                                                      <div class="au-message__item-time">
+                                                          <span>Sunday</span>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                          <div class="au-message__footer">
+                                              <button class="au-btn au-btn-load js-load-btn">المزيد</button>
+                                          </div>
+                                      </div>
+                                      <div class="au-chat">
+                                          <div class="au-chat__title">
+                                              <div class="au-chat-info">
+                                                  <div class="avatar-wrap online">
+                                                      <div class="avatar avatar--small">
+                                                          <img src="adminStyle/images/icon/avatar-02.jpg" alt="John Smith">
+                                                      </div>
+                                                  </div>
+                                                  <span class="nick">
+                                                      <a href="#">John Smith</a>
+                                                  </span>
+                                              </div>
+                                          </div>
+                                          <div class="au-chat__content">
+                                              <div class="recei-mess-wrap">
+                                                  <span class="mess-time">12 Min ago</span>
+                                                  <div class="recei-mess__inner">
+                                                      <div class="avatar avatar--tiny">
+                                                          <img src="adminStyle/images/icon/avatar-02.jpg" alt="John Smith">
+                                                      </div>
+                                                      <div class="recei-mess-list">
+                                                          <div class="recei-mess">Lorem ipsum dolor sit amet, consectetur adipiscing elit non iaculis</div>
+                                                          <div class="recei-mess">Donec tempor, sapien ac viverra</div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                              <div class="send-mess-wrap">
+                                                  <span class="mess-time">30 Sec ago</span>
+                                                  <div class="send-mess__inner">
+                                                      <div class="send-mess-list">
+                                                          <div class="send-mess">Lorem ipsum dolor sit amet, consectetur adipiscing elit non iaculis</div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                          <div class="au-chat-textfield">
+                                              <form class="au-form-icon">
+                                                  <input class="au-input au-input--full au-input--h65" type="text" placeholder="Type a message">
+                                                  <button class="au-input-icon">
+                                                      <i class="zmdi zmdi-camera"></i>
+                                                  </button>
+                                              </form>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-md-12">
+                              <div class="copyright">
+                                  <p>جميع الحقوق محفوظة<a href="https://colorlib.com">Colorlib</a>.</p>
+                              </div>
+                          </div>
+                      </div>
                   </div>
-                </div>
-
-                  <!-- chat item -->
-                  <div class="box-body chat" id="chat-box" >
-
-                </div>
-
               </div>
-              <!-- TO DO List -->
-              <div class="box box-primary">
-                <div class="box-header">
-                  <i class="ion ion-clipboard"></i>
-                  <h3 class="box-title">ﻣﻬﺎﻡ ﻟﻠﻌﻤﻞ</h3>
-                  <div class="box-tools pull-left">
-                    <ul class="pagination pagination-sm inline">
-                      <li><a href="#">&laquo;</a></li>
-                      <li><a href="#">1</a></li>
-                      <li><a href="#">2</a></li>
-                      <li><a href="#">3</a></li>
-                      <li><a href="#">&raquo;</a></li>
-                    </ul>
-                  </div>
-                </div><!-- /.box-header -->
-                <div class="box-body">
-                  <ul class="todo-list">
-                    <li>
-                      <!-- drag handle -->
-                      <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
-                      <!-- checkbox -->
-                      <input type="checkbox" value="" name="">
-                      <!-- todo text -->
-                      <span class="text"></span>
-                      <!-- Emphasis label -->
-                      <small class="label label-danger"><i class="fa fa-clock-o"></i> 2 ﺩﻗﻴﻘﺔ</small>
-                      <!-- General tools such as edit or delete-->
-                      <div class="tools">
-                        <i class="fa fa-edit"></i>
-                        <i class="fa fa-trash-o"></i>
-                      </div>
-                    </li>
-                    <li>
-                      <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
-                      <input type="checkbox" value="" name="">
-                      <span class="text">ﻣﺘﺎﺑﻌﺔ ﺗﺤﺪﻳﺚ ﺟﻬﺎﺯ اﻟﻘﻴﺎﺱ</span>
-                      <small class="label label-info"><i class="fa fa-clock-o"></i> 4 ﺳﺎﻋﺔ</small>
-                      <div class="tools">
-                        <i class="fa fa-edit"></i>
-                        <i class="fa fa-trash-o"></i>
-                      </div>
-                    </li>
-                    <li>
-                      <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
-                      <input type="checkbox" value="" name="">
-                      <span class="text">ﺗﺠﻬﻴﺰ اﻟﺘﻘﺮﻳﺮ اﻹﺩاﺭﻱ</span>
-                      <small class="label label-warning"><i class="fa fa-clock-o"></i> 1 ﻳﻮﻡ</small>
-                      <div class="tools">
-                        <i class="fa fa-edit"></i>
-                        <i class="fa fa-trash-o"></i>
-                      </div>
-                    </li>
-                    <li>
-                      <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
-                      <input type="checkbox" value="" name="">
-                      <span class="text">ﺗﺠﻬﻴﺰ اﻟﺘﻘﺮﻳﺮ اﻹﺩاﺭﻱ</span>
-                      <small class="label label-success"><i class="fa fa-clock-o"></i> 3 ﻳﻮﻡ</small>
-                      <div class="tools">
-                        <i class="fa fa-edit"></i>
-                        <i class="fa fa-trash-o"></i>
-                      </div>
-                    </li>
-                    <li>
-                      <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
-                      <input type="checkbox" value="" name="">
-                      <span class="text">ﺗﺠﻬﻴﺰ اﻟﺘﻘﺮﻳﺮ اﻹﺩاﺭﻱ</span>
-                      <small class="label label-primary"><i class="fa fa-clock-o"></i> 1 ﺃﺳﺒﻮﻉ</small>
-                      <div class="tools">
-                        <i class="fa fa-edit"></i>
-                        <i class="fa fa-trash-o"></i>
-                      </div>
-                    </li>
-                    <li>
-                      <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
-                      <input type="checkbox" value="" name="">
-                      <span class="text">ﺗﺠﻬﻴﺰ اﻟﺘﻘﺮﻳﺮ اﻹﺩاﺭﻱ</span>
-                      <small class="label label-default"><i class="fa fa-clock-o"></i> 1 ﺷﻬﺮ</small>
-                      <div class="tools">
-                        <i class="fa fa-edit"></i>
-                        <i class="fa fa-trash-o"></i>
-                      </div>
-                    </li>
-                  </ul>
-                </div><!-- /.box-body -->
-                <div class="box-footer clearfix no-border">
-                  <button class="btn btn-default pull-left"><i class="fa fa-plus"></i> اﺿﺎﻓﺔ ﻣﻬﻤﺔ</button>
-                </div>
-              </div><!-- /.box -->
+          </div>
+          <!-- END MAIN CONTENT-->
+          <!-- END PAGE CONTAINER-->
+      </div>
 
-              <!-- quick email widget -->
-              <div class="box box-info">
-                <div class="box-header">
-                  <i class="fa fa-envelope"></i>
-                  <h3 class="box-title">اﻟﺒﺮﻳﺪ</h3>
-                  <!-- tools box -->
-                  <div class="pull-left box-tools">
-                    <button class="btn btn-info btn-sm" data-widget="remove" data-toggle="tooltip" title="Remove"><i class="fa fa-times"></i></button>
-                  </div><!-- /. tools -->
-                </div>
-                <div class="box-body">
-                  <form action="" method="post">
-
-                    <div class="form-group">
-                      <input type="email" class="form-control" name="emailto" placeholder="ﺇﻟﻰ">
-                    </div>
-                    <div class="form-group">
-                      <input type="text" class="form-control" name="title" placeholder="اﻟﻌﻨﻮاﻥ">
-                    </div>
-                    <div>
-                      <textarea class="textarea" name="body" placeholder="اﻟﺮﺳﺎﻟﺔ" style="width: 100%; height: 125px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
-                    </div>
-                     <div class="box-footer clearfix">
-                  <button class="pull-left btn btn-default" id="sendEmail">ﺇﺭﺳﺎﻝ <i class="fa fa-arrow-circle-left"></i></button> </form>
-                </div>
-
-
-                </div>
-                            </div>
-
-            </section><!-- /.Left col -->
-            <!-- right col (We are only adding the ID to make the widgets sortable)-->
-            <section class="col-lg-5 connectedSortable">
-
-              <!-- Map box -->
-              <div class="box box-solid bg-light-blue-gradient">
-                <div class="box-header">
-                  <!-- tools box -->
-                  <div class="pull-left box-tools">
-                    <button class="btn btn-primary btn-sm daterange pull-left" data-toggle="tooltip" title="Date range"><i class="fa fa-calendar"></i></button>
-                    <button class="btn btn-primary btn-sm pull-left" data-widget="collapse" data-toggle="tooltip" title="Collapse" style="margin-right: 5px;"><i class="fa fa-minus"></i></button>
-                  </div><!-- /. tools -->
-
-                  <i class="fa fa-map-marker"></i>
-                  <h3 class="box-title">
-                    Visitors
-                  </h3>
-                </div>
-                <div class="box-body">
-                  <div id="world-map" style="height: 250px; width: 100%;"></div>
-                </div><!-- /.box-body-->
-                <div class="box-footer no-border">
-                  <div class="row">
-                    <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
-                      <div id="sparkline-1"></div>
-                      <div class="knob-label">Visitors</div>
-                    </div><!-- ./col -->
-                    <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
-                      <div id="sparkline-2"></div>
-                      <div class="knob-label">Online</div>
-                    </div><!-- ./col -->
-                    <div class="col-xs-4 text-center">
-                      <div id="sparkline-3"></div>
-                      <div class="knob-label">Exists</div>
-                    </div><!-- ./col -->
-                  </div><!-- /.row -->
-                </div>
-              </div>
-              <!-- /.box -->
-
-              <!-- solid sales graph -->
-              <div class="box box-solid bg-teal-gradient">
-                <div class="box-header">
-                  <i class="fa fa-th"></i>
-                  <h3 class="box-title">Sales Graph</h3>
-                  <div class="box-tools pull-left">
-                    <button class="btn bg-teal btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                    <button class="btn bg-teal btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>
-                  </div>
-                </div>
-                <div class="box-body border-radius-none">
-                  <div class="chart" id="line-chart" style="height: 250px;"></div>
-                </div><!-- /.box-body -->
-                <div class="box-footer no-border">
-                  <div class="row">
-                    <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
-                      <input type="text" class="knob" data-readonly="true" value="20" data-width="60" data-height="60" data-fgColor="#39CCCC">
-                      <div class="knob-label">Mail-Orders</div>
-                    </div><!-- ./col -->
-                    <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
-                      <input type="text" class="knob" data-readonly="true" value="50" data-width="60" data-height="60" data-fgColor="#39CCCC">
-                      <div class="knob-label">Online</div>
-                    </div><!-- ./col -->
-                    <div class="col-xs-4 text-center">
-                      <input type="text" class="knob" data-readonly="true" value="30" data-width="60" data-height="60" data-fgColor="#39CCCC">
-                      <div class="knob-label">In-Store</div>
-                    </div><!-- ./col -->
-                  </div><!-- /.row -->
-                </div><!-- /.box-footer -->
-              </div><!-- /.box -->
-
-              <!-- Calendar -->
-              <div class="box box-solid bg-green-gradient">
-                <div class="box-header">
-                  <i class="fa fa-calendar"></i>
-                  <h3 class="box-title">Calendar</h3>
-                  <!-- tools box -->
-                  <div class="pull-left box-tools">
-                    <!-- button with a dropdown -->
-                    <div class="btn-group">
-                      <button class="btn btn-success btn-sm dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bars"></i></button>
-                      <ul class="dropdown-menu pull-left" role="menu">
-                        <li><a href="#">Add new event</a></li>
-                        <li><a href="#">Clear events</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">View calendar</a></li>
-                      </ul>
-                    </div>
-                    <button class="btn btn-success btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                    <button class="btn btn-success btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>
-                  </div><!-- /. tools -->
-                </div><!-- /.box-header -->
-                <div class="box-body no-padding">
-                  <!--The calendar -->
-                  <div id="calendar" style="width: 100%"></div>
-                </div><!-- /.box-body -->
-                <div class="box-footer text-black">
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <!-- Progress bars -->
-                      <div class="clearfix">
-                        <span class="pull-right">Task #1</span>
-                        <small class="pull-left">90%</small>
-                      </div>
-                      <div class="progress xs">
-                        <div class="progress-bar progress-bar-green" style="width: 90%;"></div>
-                      </div>
-
-                      <div class="clearfix">
-                        <span class="pull-right">Task #2</span>
-                        <small class="pull-left">70%</small>
-                      </div>
-                      <div class="progress xs">
-                        <div class="progress-bar progress-bar-green" style="width: 70%;"></div>
-                      </div>
-                    </div><!-- /.col -->
-                    <div class="col-sm-6">
-                      <div class="clearfix">
-                        <span class="pull-right">Task #3</span>
-                        <small class="pull-left">60%</small>
-                      </div>
-                      <div class="progress xs">
-                        <div class="progress-bar progress-bar-green" style="width: 60%;"></div>
-                      </div>
-
-                      <div class="clearfix">
-                        <span class="pull-right">Task #4</span>
-                        <small class="pull-left">40%</small>
-                      </div>
-                      <div class="progress xs">
-                        <div class="progress-bar progress-bar-green" style="width: 40%;"></div>
-                      </div>
-                    </div><!-- /.col -->
-                  </div><!-- /.row -->
-                </div>
-              </div><!-- /.box -->
-
-            </section><!-- right col -->
-          </div><!-- /.row (main row) -->
-
-        </section><!-- /.content -->
-      </div><!-- /.content-wrapper -->
-
-@stop
+  </div>
+ @stop

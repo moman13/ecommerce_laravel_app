@@ -1,455 +1,394 @@
-
-
-  <head>
+<head>
+    <!-- Required meta tags-->
     <meta charset="UTF-8">
-    <meta name="csrf-token" content="{{csrf_token()}}">
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <!-- Bootstrap 3.3.4 -->
-    <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/email.css') }}">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <!-- Ionicons 2.0.0 -->
-    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="au theme template">
+    <meta name="author" content="Hau Nguyen">
+    <meta name="keywords" content="au theme template">
 
-    <link rel="stylesheet" href="{{ asset('dist/fonts/fonts-fa.css') }}">
-    <link rel="stylesheet" href="{{ asset('dist/css/bootstrap-rtl.min.css') }}">
-    <link href="{{asset('plugins/fullcalendar/fullcalendar.min.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{asset('plugins/fullcalendar/fullcalendar.print.css')}}" rel="stylesheet" type="text/css" media='print' />
-    <!-- jquery ui -->
-    <link rel="stylesheet" href="{{ asset('dist/css/jquery-ui.css') }}">
-    <!-- iCheck -->
-    <link rel="stylesheet" href="{{ asset('plugins/iCheck/flat/blue.css') }}">
-    <!-- Morris chart -->
-    <link rel="stylesheet" href="{{ asset('plugins/morris/morris.css') }}">
-    <!-- jvectormap -->
-    <link rel="stylesheet" href="{{ asset('plugins/jvectormap/jquery-jvectormap-1.2.2.css') }}">
-    <!-- Date Picker -->
-    <!-- Daterange picker -->
-    <link rel="stylesheet" href="{{ asset('plugins/daterangepicker/daterangepicker-bs3.css') }}">
-    <!-- bootstrap wysihtml5 - text editor -->
-    <link rel="stylesheet" href="{{ asset('plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') }}">
-    <!-- DataTables -->
+    <!-- Title Page-->
+    <title>Dashboard</title>
 
-    <link rel="stylesheet" href="{{ asset('plugins/datatables/dataTables.bootstrap.css') }}">
+    <!-- Fontfaces CSS-->
+    <link href="{{asset('adminStyle/css/font-face.css')}}" rel="stylesheet" media="all">
+    <link href="{{asset('adminStyle/vendor/font-awesome-4.7/css/font-awesome.min.css')}}" rel="stylesheet" media="all">
+    <link href="{{asset('adminStyle/vendor/font-awesome-5/css/fontawesome-all.min.css')}}" rel="stylesheet" media="all">
+    <link href="{{asset('adminStyle/vendor/mdi-font/css/material-design-iconic-font.min.css')}}" rel="stylesheet" media="all">
 
-        <!-- Theme style -->
-    <link rel="stylesheet" href="{{ asset('dist/css/skins/_all-skins.css') }}">
-    <link rel="stylesheet" href="{{ asset('dist/css/AdminLTE.css') }}">
-    <link rel="stylesheet" href="{{ asset('dist/css/customer.css') }}">
-<link rel ='stylesheet' href="{{asset('css/toastr.min.css')}}"/>
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js') }}"</script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js') }}"</script>
-    <![endif]-->
-@yield('style')
-  </head>
+    <!-- Bootstrap CSS-->
+    <link href="{{asset('adminStyle/css/bootstrap.css')}}" rel="stylesheet" media="all">
+    <link href="{{asset('adminStyle/css/bootstrap-rtl.css')}}" rel="stylesheet" media="all">
 
-  <body class="skin-blue sidebar-mini"  >
+    <!-- Vendor CSS-->
+    <link href="{{asset('adminStyle/vendor/animsition/animsition.min.css')}}" rel="stylesheet" media="all">
+    <link href="{{asset('adminStyle/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css')}}" rel="stylesheet" media="all">
+    <link href="{{asset('adminStyle/vendor/wow/animate.css')}}" rel="stylesheet" media="all">
+    <link href="{{asset('adminStyle/vendor/css-hamburgers/hamburgers.min.css')}}" rel="stylesheet" media="all">
+    <link href="{{asset('adminStyle/vendor/slick/slick.css')}}" rel="stylesheet" media="all">
+    <link href="{{asset('adminStyle/vendor/select2/select2.min.css')}}" rel="stylesheet" media="all">
+    <link href="{{asset('adminStyle/vendor/perfect-scrollbar/perfect-scrollbar.css')}}" rel="stylesheet" media="all">
 
-    <div class="wrapper" >
+    <!-- Main CSS-->
+    <link href="{{asset('adminStyle/css/theme.css')}}" rel="stylesheet" media="all">
 
-      <header class="main-header">
-        <!-- Logo -->
-        <a href="/admin" class="logo">
-          <!-- mini logo for sidebar mini 50x50 pixels -->
-          <span class="logo-mini">اﻟﻤﺨﺘﺒﺮ</span>
-          <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg">ﻣﺨﺘﺒﺮاﺕ اﻟﻤﻮاﺩ ﻭاﻟﺘﺮﺑﺔ</span>
-        </a>
-        <!-- Header Navbar: style can be found in header.less -->
-        <nav class="navbar navbar-static-top" role="navigation">
-          <!-- Sidebar toggle button-->
-          <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-            <span class="sr-only">ﺗﺒﺪﻳﻞ اﻟﻘﻮاﺋﻢ</span>
-          </a>
-          <div class="navbar-custom-menu" id="app-2"  >
-            <ul class="nav navbar-nav" >
-              <!-- Messages: style can be found in dropdown.less-->
-              <li class="dropdown messages-menu">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <i class="fa fa-envelope-o"></i>
-                  <span class="label label-success">5</span>
-                </a>
-                <ul class="dropdown-menu" >
-                  <li class="header">ﺭﺳﺎﺋﻞ 5 ﻟﺪﻳﻚ</li>
-                  <li>
-                    <!-- inner menu: contains the actual data -->
-                    <ul class="menu">
+</head>
 
-                      <li><!-- start message -->
-                        <a href="">
-                          <div class="pull-right">
-                          <img src="{{ asset('dist/img/rrasheed.jpg')}}" class="img-circle" alt="User Image">
-                          </div>
-                          <h4>
-                            م. الفني
-                            <small><i class="fa fa-clock-o"></i> 5 دقائق</small>
-                          </h4>
-                          <p>نرجوا اعتماد تقري شركة الباطون..</p>
-                          </a>
-                          </li><!-- end message -->
-                          <li>
-                          <a href="#">
-                          <div class="pull-right">
-                          <img src="{{ asset('dist/img/rrasheed.jpg')}}" class="img-circle" alt="User Image">
-                          </div>
-                          <h4>
-                            السكرتير
-                            <small><i class="fa fa-clock-o"></i> 2 ساعة</small>
-                          </h4>
-                          <p>لا تنسى موعد اليوم بعد الظهر</p>
-                          </a>
-                          </li>
-                          <li>
-                          <a href="#">
-                          <div class="pull-right">
-                          </div>
-                          <img src="{{ asset('dist/img/rrasheed.jpg')}}" class="img-circle" alt="User Image">
-                          <h4>
-                            شركة الباطون
-                            <small><i class="fa fa-clock-o"></i> اليوم</small>
-                          </h4>
-                          <p>هل التقرير جاهز</p>
-                          </a>
-                          </li>
-                          <li>
-                          <a href="#">
-                          <div class="pull-right">
-                            <img src="{{ asset('dist/img/rrasheed.jpg')}}" class="img-circle" alt="User Image">
-                          </div>
-                          <h4>
-                            المحاسب
-                            <small><i class="fa fa-clock-o"></i> أمس</small>
-                          </h4>
-                          <p>تمت عملية تحويل الرصيد</p>
-                          </a>
-                          </li>
-                          <li>
-                          <a href="#">
-                          <div class="pull-right">
-                          </div>
-                          <img src="{{ asset('dist/img/rrasheed.jpg')}}" class="img-circle" alt="User Image">
-                          <h4>
-                            السكرتير
-                            <small><i class="fa fa-clock-o"></i> 2 يوم</small>
-                          </h4>
-                          <p>اجتماع مجلس الشركة..</p>
-                          </a>
-                          </li>
-                          </ul>
-                          </li>
-                          <li class="footer"><a href="#">مشاهدة الكل</a></li>
-                          </ul>
-              </li>
-              <!-- Notifications: style can be found in dropdown.less -->
-              <li class="dropdown notifications-menu">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <i class="fa fa-bell-o"></i>
-                  <span class="label label-warning">10</span>
-                </a>
-                <ul class="dropdown-menu">
-                  <li class="header">لديك 10 تنبيهات</li>
-                  <li>
-                    <!-- inner menu: contains the actual data -->
-                    <ul class="menu">
-                      <li>
-                        <a href="#">
-                          <i class="fa fa-users text-aqua"></i> تقرير شركة البلاط بحاجة لاعتماد
+<body class="animsition">
+    <div class="page-wrapper">
+        <!-- HEADER MOBILE-->
+        <header class="header-mobile d-block d-lg-none">
+            <div class="header-mobile__bar">
+                <div class="container-fluid">
+                    <div class="header-mobile-inner">
+                        <a class="logo" href="index.html">
+                            <img src="{{asset('adminStyle/images/icon/logo.png')}}" alt="CoolAdmin" />
                         </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i class="fa fa-warning text-yellow"></i> تم اعتماد التقرير المالي
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i class="fa fa-users text-red"></i> تقرير شركة البلاط بحاجة لاعتماد
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i class="fa fa-shopping-cart text-green"></i> تقرير شركة البلاط بحاجة لاعتماد
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i class="fa fa-user text-red"></i> تقرير شركة البلاط بحاجة لاعتماد
-                        </a>
-                      </li>
+                        <button class="hamburger hamburger--slider" type="button">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <nav class="navbar-mobile">
+                <div class="container-fluid">
+                    <ul class="navbar-mobile__list list-unstyled">
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-tachometer-alt"></i>المنتجات</a>
+                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                <li>
+                                    <a href="index.html">المنتجات</a>
+                                </li>
+                                <li>
+                                    <a href="index2.html">الاكثير مبيعا</a>
+                                </li>
+                                <li>
+                                    <a href="index3.html">اظافة منتج جديد</a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="chart.html">
+                                <i class="fas fa-chart-bar"></i>الزبائن</a>
+                        </li>
+                        <li>
+                            <a href="table.html">
+                                <i class="fas fa-table"></i>خدمة العملاء</a>
+                        </li>
+                        <li>
+                            <a href="form.html">
+                                <i class="far fa-check-square"></i>الاحصائيات</a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-calendar-alt"></i>التصنيفات</a>
+                        </li>
+                        <li>
+                            <a href="map.html">
+                                <i class="fas fa-map-marker-alt"></i>المدونة</a>
+                        </li>
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-copy"></i>Pages</a>
+                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                <li>
+                                    <a href="login.html">Login</a>
+                                </li>
+                                <li>
+                                    <a href="register.html">Register</a>
+                                </li>
+                                <li>
+                                    <a href="forget-pass.html">Forget Password</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-desktop"></i>UI Elements</a>
+                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                <li>
+                                    <a href="button.html">Button</a>
+                                </li>
+                                <li>
+                                    <a href="badge.html">Badges</a>
+                                </li>
+                                <li>
+                                    <a href="tab.html">Tabs</a>
+                                </li>
+                                <li>
+                                    <a href="card.html">Cards</a>
+                                </li>
+                                <li>
+                                    <a href="alert.html">Alerts</a>
+                                </li>
+                                <li>
+                                    <a href="progress-bar.html">Progress Bars</a>
+                                </li>
+                                <li>
+                                    <a href="modal.html">Modals</a>
+                                </li>
+                                <li>
+                                    <a href="switch.html">Switchs</a>
+                                </li>
+                                <li>
+                                    <a href="grid.html">Grids</a>
+                                </li>
+                                <li>
+                                    <a href="fontawesome.html">Fontawesome Icon</a>
+                                </li>
+                                <li>
+                                    <a href="typo.html">Typography</a>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
-                  </li>
-                  <li class="footer"><a href="#">مشاهدة الكل</a></li>
-                </ul>
-              </li>
+                </div>
+            </nav>
+        </header>
+        <!-- END HEADER MOBILE-->
 
-            <!-- Tasks: style can be found in dropdown.less -->
-            <li class="dropdown tasks-menu">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <i class="fa fa-flag-o"></i>
-                <span class="label label-danger">9</span>
-              </a>
-              <ul class="dropdown-menu">
-                <li class="header">لديك 9 مهام</li>
-                <li>
-                  <!-- inner menu: contains the actual data -->
-                  <ul class="menu">
-                    <li><!-- Task item -->
-                      <a href="#">
-                        <h3>
-                          تجهيز التقرير الإداري
-                          <small class="pull-left">20%</small>
-                        </h3>
-                        <div class="progress xs">
-                          <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                            <span class="sr-only">20% اكتمل</span>
-                          </div>
-                        </div>
-                      </a>
-                    </li><!-- end task item -->
-                    <li><!-- Task item -->
-                      <a href="#">
-                        <h3>
-                          زيارات الشركات
-                          <small class="pull-left">40%</small>
-                        </h3>
-                        <div class="progress xs">
-                          <div class="progress-bar progress-bar-green" style="width: 40%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                            <span class="sr-only">40% اكتمل</span>
-                          </div>
-                        </div>
-                      </a>
-                    </li><!-- end task item -->
-                    <li><!-- Task item -->
-                      <a href="#">
-                        <h3>
-                          متابعة تحديث جهاز القياس
-                          <small class="pull-left">30%</small>
-                        </h3>
-                        <div class="progress xs">
-                          <div class="progress-bar progress-bar-red" style="width: 30%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                            <span class="sr-only">30% اكتمل</span>
-                          </div>
-                        </div>
-                      </a>
-                    </li><!-- end task item -->
-                    <li><!-- Task item -->
-                      <a href="#">
-                        <h3>
-                          مراجعة التقرير المالي
-                          <small class="pull-left">80%</small>
-                        </h3>
-                        <div class="progress xs">
-                          <div class="progress-bar progress-bar-yellow" style="width: 80%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                            <span class="sr-only">80% اكتمل</span>
-                          </div>
-                        </div>
-                      </a>
-                    </li><!-- end task item -->
-                  </ul>
-                </li>
-                <li class="footer">
-                  <a href="#">مشاهدة الكل</a>
-                </li>
-              </ul>
-            </li>
-              <!-- User Account: style can be found in dropdown.less -->
-              <li class="dropdown user user-menu">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <img src="{{ asset('dist/img/rrasheed.jpg')}}" class="user-image" alt="User Image">
-                  <span class="hidden-xs">رائد رشيد</span>
+        <!-- MENU SIDEBAR-->
+        <aside class="menu-sidebar d-none d-lg-block" dir="rtl">
+            <div class="logo">
+                <a href="#">
+                    <img src="{{asset('adminStyle/images/icon/logo.png')}}" alt="Cool Admin" />
                 </a>
-                <ul class="dropdown-menu">
-                  <!-- User image -->
-                  <li class="user-header">
-                    <img src="{{ asset('dist/img/rrasheed.jpg')}}" class="img-circle" alt="User Image">
-                    <p>
-                     رائد رشيد
-                      <small>عضو منذ 2017</small>
-                    </p>
-                  </li>
-                  <!-- Menu Body -->
+            </div>
+            <div class="menu-sidebar__content js-scrollbar1">
+                <nav class="navbar-sidebar">
+                    <ul class="list-unstyled navbar__list">
+                        <li class="active has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-tachometer-alt"></i>المنتجات</a>
+                            <ul class="list-unstyled navbar__sub-list js-sub-list">
+                                  <li>
+                                    <a href="index.html">المنتجات</a>
+                                </li>
+                                <li>
+                                    <a href="index2.html">الاكثير مبيعا</a>
+                                </li>
+                                <li>
+                                    <a href="index3.html">اظافة منتج جديد</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="chart.html">
+                                <i class="fas fa-chart-bar"></i>الزبائن</a>
+                        </li>
+                        <li>
+                            <a href="table.html">
+                                <i class="fas fa-table"></i>خدمة العملاء</a>
+                        </li>
+                        <li>
+                            <a href="form.html">
+                                <i class="far fa-check-square"></i>الاحصائيات</a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-calendar-alt"></i>التصنيفات</a>
+                        </li>
+                        <li>
+                            <a href="map.html">
+                                <i class="fas fa-map-marker-alt"></i>المدونة</a>
+                        </li>
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-copy"></i>الصفحات</a>
+                            <ul class="list-unstyled navbar__sub-list js-sub-list">
+                                <li>
+                                    <a href="login.html">Login</a>
+                                </li>
+                                <li>
+                                    <a href="register.html">Register</a>
+                                </li>
+                                <li>
+                                    <a href="forget-pass.html">Forget Password</a>
+                                </li>
+                            </ul>
+                        </li>
 
-                  <!-- Menu Footer-->
-                  <li class="user-footer">
-                    <div class="pull-right">
-                      <a href="#" class="btn btn-default btn-flat">الإعدادات</a>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+        <!-- END MENU SIDEBAR-->
+
+        <!-- PAGE CONTAINER-->
+        <div class="page-container">
+            <!-- HEADER DESKTOP-->
+            <header class="header-desktop">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <div class="header-wrap">
+                            <form class="form-header" action="" method="POST">
+                                <input class="au-input au-input--xl" type="text" name="search" placeholder="Search for datas &amp; reports..." />
+                                <button class="au-btn--submit" type="submit">
+                                    <i class="zmdi zmdi-search"></i>
+                                </button>
+                            </form>
+                            <div class="header-button">
+                                <div class="noti-wrap">
+                                    <div class="noti__item js-item-menu">
+                                        <i class="zmdi zmdi-comment-more"></i>
+                                        <span class="quantity">1</span>
+                                        <div class="mess-dropdown js-dropdown">
+                                            <div class="mess__title">
+                                                <p>You have 2 news message</p>
+                                            </div>
+                                            <div class="mess__item">
+                                                <div class="image img-cir img-40">
+                                                    <img src="{{asset('adminStyle/images/icon/avatar-06.jpg')}}" alt="Michelle Moreno" />
+                                                </div>
+                                                <div class="content">
+                                                    <h6>Michelle Moreno</h6>
+                                                    <p>Have sent a photo</p>
+                                                    <span class="time">3 min ago</span>
+                                                </div>
+                                            </div>
+                                            <div class="mess__item">
+                                                <div class="image img-cir img-40">
+                                                    <img src="{{asset('adminStyle/images/icon/avatar-04.jpg')}}" alt="Diane Myers" />
+                                                </div>
+                                                <div class="content">
+                                                    <h6>Diane Myers</h6>
+                                                    <p>You are now connected on message</p>
+                                                    <span class="time">Yesterday</span>
+                                                </div>
+                                            </div>
+                                            <div class="mess__footer">
+                                                <a href="#">View all messages</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="noti__item js-item-menu">
+                                        <i class="zmdi zmdi-email"></i>
+                                        <span class="quantity">1</span>
+                                        <div class="email-dropdown js-dropdown">
+                                            <div class="email__title">
+                                                <p>You have 3 New Emails</p>
+                                            </div>
+                                            <div class="email__item">
+                                                <div class="image img-cir img-40">
+                                                    <img src="{{asset('adminStyle/images/icon/avatar-06.jpg')}}" alt="Cynthia Harvey" />
+                                                </div>
+                                                <div class="content">
+                                                    <p>Meeting about new dashboard...</p>
+                                                    <span>Cynthia Harvey, 3 min ago</span>
+                                                </div>
+                                            </div>
+                                            <div class="email__item">
+                                                <div class="image img-cir img-40">
+                                                    <img src="{{asset('adminStyle/images/icon/avatar-05.jpg')}}" alt="Cynthia Harvey" />
+                                                </div>
+                                                <div class="content">
+                                                    <p>Meeting about new dashboard...</p>
+                                                    <span>Cynthia Harvey, Yesterday</span>
+                                                </div>
+                                            </div>
+                                            <div class="email__item">
+                                                <div class="image img-cir img-40">
+                                                    <img src="{{asset('adminStyle/images/icon/avatar-04.jpg')}}" alt="Cynthia Harvey" />
+                                                </div>
+                                                <div class="content">
+                                                    <p>Meeting about new dashboard...</p>
+                                                    <span>Cynthia Harvey, April 12,,2018</span>
+                                                </div>
+                                            </div>
+                                            <div class="email__footer">
+                                                <a href="#">See all emails</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="noti__item js-item-menu">
+                                        <i class="zmdi zmdi-notifications"></i>
+                                        <span class="quantity">3</span>
+                                        <div class="notifi-dropdown js-dropdown">
+                                            <div class="notifi__title">
+                                                <p>You have 3 Notifications</p>
+                                            </div>
+                                            <div class="notifi__item">
+                                                <div class="bg-c1 img-cir img-40">
+                                                    <i class="zmdi zmdi-email-open"></i>
+                                                </div>
+                                                <div class="content">
+                                                    <p>You got a email notification</p>
+                                                    <span class="date">April 12, 2018 06:50</span>
+                                                </div>
+                                            </div>
+                                            <div class="notifi__item">
+                                                <div class="bg-c2 img-cir img-40">
+                                                    <i class="zmdi zmdi-account-box"></i>
+                                                </div>
+                                                <div class="content">
+                                                    <p>Your account has been blocked</p>
+                                                    <span class="date">April 12, 2018 06:50</span>
+                                                </div>
+                                            </div>
+                                            <div class="notifi__item">
+                                                <div class="bg-c3 img-cir img-40">
+                                                    <i class="zmdi zmdi-file-text"></i>
+                                                </div>
+                                                <div class="content">
+                                                    <p>You got a new file</p>
+                                                    <span class="date">April 12, 2018 06:50</span>
+                                                </div>
+                                            </div>
+                                            <div class="notifi__footer">
+                                                <a href="#">All notifications</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="account-wrap">
+                                    <div class="account-item clearfix js-item-menu">
+                                        <div class="image">
+                                            <img src="{{asset('adminStyle/images/icon/avatar-01.jpg')}}" alt="John Doe" />
+                                        </div>
+                                        <div class="content">
+                                            <a class="js-acc-btn" href="#">john doe</a>
+                                        </div>
+                                        <div class="account-dropdown js-dropdown">
+                                            <div class="info clearfix">
+                                                <div class="image">
+                                                    <a href="#">
+                                                        <img src="{{asset('adminStyle/images/icon/avatar-01.jpg')}}" alt="John Doe" />
+                                                    </a>
+                                                </div>
+                                                <div class="content">
+                                                    <h5 class="name">
+                                                        <a href="#">john doe</a>
+                                                    </h5>
+                                                    <span class="email">johndoe@example.com</span>
+                                                </div>
+                                            </div>
+                                            <div class="account-dropdown__body">
+                                                <div class="account-dropdown__item">
+                                                    <a href="#">
+                                                        <i class="zmdi zmdi-account"></i>Account</a>
+                                                </div>
+                                                <div class="account-dropdown__item">
+                                                    <a href="#">
+                                                        <i class="zmdi zmdi-settings"></i>Setting</a>
+                                                </div>
+                                                <div class="account-dropdown__item">
+                                                    <a href="#">
+                                                        <i class="zmdi zmdi-money-box"></i>Billing</a>
+                                                </div>
+                                            </div>
+                                            <div class="account-dropdown__footer">
+                                                <a href="#">
+                                                    <i class="zmdi zmdi-power"></i>Logout</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="pull-left">
-                      <a href="../login/login.php" class="btn btn-default btn-flat">تسجيل خروج</a>
-                    </div>
-                  </li>
-                </ul>
-              </li>
-              <!-- Control Sidebar Toggle Button -->
-              <li>
-                <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </header>
-
-
-      <!-- Left side column. contains the logo and sidebar -->
- <aside class="main-sidebar">
-        <!-- sidebar: style can be found in sidebar.less -->
-        <section class="sidebar">
-          <!-- Sidebar user panel -->
-          <div class="user-panel">
-            <div class="pull-right image">
-              <img src="{{ asset('dist/img/rrasheed.jpg')}}" class="img-circle" alt="User Image">
-            </div>
-            <div class="pull-left info">
-              <p>رائد رشيد</p>
-              <a href="#"><i class="fa fa-circle text-success"></i>نشط</a>
-            </div>
-          </div>
-          <!-- search form -->
-          <form action="#" method="get" class="sidebar-form">
-            <div class="input-group">
-              <input type="text" name="q" class="form-control" placeholder="بحث عن ...">
-              <span class="input-group-btn">
-                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i></button>
-              </span>
-            </div>
-          </form>
-          <!-- /.search form -->
-          <!-- sidebar menu: : style can be found in sidebar.less -->
-          <ul class="sidebar-menu"data-widget="tree">
-            <li class="header">لوحة التحكم</li>
-            <li class="treeview">
-              <a href="#">
-                <i class="fa fa-dashboard"></i> <span>ثوابت النظام</span> <i class="fa fa-angle-left pull-left"></i>
-              </a>
-              <ul class="treeview-menu ">
-                <li><a href="../01_system/01_days.php"><i class="fa fa-circle-o"></i>ايام الاسبوع</a></li>
-                <li><a href="../01_system/02_companies.php"><i class="fa fa-circle-o"></i>المؤسسات</a></li>
-                <li><a href="../01_system/03_sampleTypes.php" id="aa"><i class="fa fa-circle-o"></i>انواع العينات</a></li>
-                <li><a href="../01_system/04_projects.php"><i class="fa fa-circle-o"></i>المشاريع</a></li>
-                <li><a href="../01_system/05_companyTypes.php"><i class="fa fa-circle-o"></i> انواع المؤسسات</a></li>
-                <li><a href="../01_system/06_tests.php"><i class="fa fa-circle-o"></i>الاختبارات</a></li>
-                <li><a href="../01_system/07_checks.php"><i class="fa fa-circle-o"></i>الفحوصات</a></li>
-				        <li><a href="../01_system/08_countries.php"><i class="fa fa-circle-o"></i> البلاد</a></li>
-                <li><a href="../01_system/09_governorates.php"><i class="fa fa-circle-o"></i> المحافظة</a></li>
-                <li><a href="../01_system/10_cities.php"><i class="fa fa-circle-o"></i> المدن</a></li>
-                <li><a href="../01_system/11_branches.php"><i class="fa fa-circle-o"></i> الفروع</a></li>
-              </ul>
-            </li>
-              <li class="treeview">
-              <a href="#">
-                <i class="fa fa-users"></i> <span> طلبات فحص العينات</span> <i class="fa fa-angle-left pull-left"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="../02_samples/managerSamplesList.php"><i class="fa fa-circle-o"></i>قائمة طلبات فحص عينة</a></li>
-                <li><a href="../02_samples/sampleRequest.php"><i class="fa fa-circle-o"></i>طلب فحص عينة جديد</a></li>
-				<li><a href="../02_samples/sampleRequestShow.php"><i class="fa fa-circle-o"></i>عرض طلب فحص عينة</a></li>
-              </ul>
-            </li>
-               <li class="treeview">
-              <a href="#">
-                <i class="fa fa-users"></i> <span>الفحوصات</span> <i class="fa fa-angle-left pull-left"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="../03_checks/checkerChecksList.php"><i class="fa fa-circle-o"></i>قائمة الفحوصات</a></li>
-                <li><a href="../03_checks/concreteCompressionCheckAddEdit.php"><i class="fa fa-circle-o"></i> طلب فحص جديد</a></li>
-				<li><a href="../03_checks/concreteCompressionCheckReport.php"><i class="fa fa-circle-o"></i> عرض فحص</a></li>
-              </ul>
-            </li>
-            <li class="treeview">
-              <a href="#">
-                <i class="fa fa-users"></i> <span>المستخدمون</span> <i class="fa fa-angle-left pull-left"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="../04_users/usersList.php"><i class="fa fa-circle-o"></i> قائمة المستخدمين</a></li>
-                <li><a href="../04_users/userAddEdit.php"><i class="fa fa-circle-o"></i> مستخدم جديد</a></li>
-                <li><a href="../04_users/usersPermissions.php"><i class="fa fa-circle-o"></i> صلاحيات المستخدمين</a></li>
-              </ul>
-            </li>
-            <li class="treeview">
-              <a href="#">
-                <i class="fa fa-users"></i> <span>التقارير</span> <i class="fa fa-angle-left pull-left"></i>
-              </a>
-              <ul class="treeview-menu">
-				<li><a href="#"><i class="fa fa-circle-o"></i>عرض تقارير<i class="fa fa-angle-left pull-left"></i></a>
-                  <ul class="treeview-menu">
-                    <li><a href="../03_checks/concreteCompressionCheckReport.php"><i class="fa fa-circle-o"></i>ضغط باطون</a></li>
-                   <li><a href="../03_checks/fieldDensityCheckReport.php"><i class="fa fa-circle-o"></i> كثافة حقلية</a></li>
-                    <li><a href="../03_checks/inspectionPavingBricksCheck(Interlock).php"><i class="fa fa-circle-o"></i> برى طوب الرصف ( انترلوك )</a></li>
-                    <li><a href="../03_checks/porcelainTilesCheckResults.php"><i class="fa fa-circle-o"></i>  بلاط بورسلان ( ارضيات )</a></li>
-                    <li><a href="../03_checks/ceramicTilesCheckResultsFlooring.php"><i class="fa fa-circle-o"></i>  بلاط كراميكا ( ارضيات )</a></li>
-                    <li><a href="../03_checks/ceramicTilesCheckResultsWall.php"><i class="fa fa-circle-o"></i>  بلاط كراميكا ( حوائط )</a></li>
-                     <li><a href="../03_checks/concreteTilesCheckResults.php"><i class="fa fa-circle-o"></i> بلاط اسمنتي</a></li>
-                    <li><a href="../03_checks/landTilesCheckResults.php"><i class="fa fa-circle-o"></i> بلاط ارضي ( تيرازو )</a></li>
-                    <li><a href="../03_checks/checkThicknessThicknessPaintAluminum.php"><i class="fa fa-circle-o"></i> سماكة الطلاء للألمونیوم</a></li>
-                     <li><a href="../03_checks/check'Keystone'RoadsAndParkingOfCars.php"><i class="fa fa-circle-o"></i>نتائج فحص حجر الشك"الكیربستون"للطرق ومواقف السیارات</a></li>
-                    <li><a href="../03_checks/BitumenCheckResults.php"><i class="fa fa-circle-o"></i> Bitumen Test Results</a></li>
-                    <li><a href="../03_checks/asphaltCoreCheckResults.php"><i class="fa fa-circle-o"></i> Asphalt Core Testing</a></li>
-                    <li><a href="../03_checks/marshallCheckResults.php"><i class="fa fa-circle-o"></i>  Mrshall Test</a></li>
-                    <li><a href="../03_checks/pavedTllesCompresslonCheck.php"><i class="fa fa-circle-o"></i>  Paved Tiles Compression</a></li>
-                    <li><a href="../03_checks/californiaBearingRatio.php"><i class="fa fa-circle-o"></i> CaliforniaBearingRatio</a></li>
-                    <li><a href="../03_checks/ModifiedCompactionTest.php"><i class="fa fa-circle-o"></i>ModifiedCompactionTest</a></li>
-                    <li><a href="../03_checks/calvorniaCarryingRatio.php"><i class="fa fa-circle-o"></i>calvorniaCarryingRatio</a></li>
-                    <li><a href="../03_checks/schmidtHammreCheck.php"><i class="fa fa-circle-o"></i>SCHMIDT HAMMER TEST</a></li>
-                     <li><a href="../03_checks/concreteCoreCompressionCheck.php"><i class="fa fa-circle-o"></i>CONCRETE CORE COMPRESSION TEST</a></li>
-                       <li><a href="../03_checks/testResultsBlendedCement.php"><i class="fa fa-circle-o"></i>TEST RESULTS OF BLENDED CEMENT</a></li>
-                  </ul>
-                </li>
-
-                  <li><a href="#"><i class="fa fa-circle-o"></i>ادخال تقارير<i class="fa fa-angle-left pull-left"></i></a>
-                  <ul class="treeview-menu">
-                    <li><a href="../03_checks/concreteCompressionCheckAddEdit.php"><i class="fa fa-circle-o"></i>ضغط باطون</a></li>
-                    <li><a href="../03_checks/fieldDensityCheckAddEdit.php"><i class="fa fa-circle-o"></i> كثافة حقلية</a></li>
-                    <li><a href="../03_checks/inspectionPavingBricksCheck(Interlock)AddEdit.php"><i class="fa fa-circle-o"></i> برى طوب الرصف ( انترلوك )</a></li>
-                   <li><a href="../03_checks/porcelainTilesCheckResultsAddEdit.php"><i class="fa fa-circle-o"></i>  بلاط بورسلان ( ارضيات )</a></li>
-                    <li><a href="../03_checks/ceramicTilesCheckResultsFlooringAddEdit.php"><i class="fa fa-circle-o"></i>  بلاط كراميكا ( ارضيات )</a></li>
-                    <li><a href="../03_checks/ceramicTilesCheckResultsWallAddEdit.php"><i class="fa fa-circle-o"></i>  بلاط كراميكا ( حوائط )</a></li>
-                    <li><a href="../03_checks/concreteTilesCheckResultsAddEdit.php"><i class="fa fa-circle-o"></i> بلاط اسمنتي</a></li>
-                     <li><a href="../03_checks/landTilesCheckResultsAddEdit.php"><i class="fa fa-circle-o"></i> بلاط ارضي ( تيرازو )</a></li>
-                    <li><a href="../03_checks/checkThicknessThicknessPaintAluminumAddEdit.php"><i class="fa fa-circle-o"></i> سماكة الطلاء للألمونیوم</a></li>
-                    <li><a href="../03_checks/check'Keystone'RoadsAndParkingOfCarsAddEdit.php"><i class="fa fa-circle-o"></i>نتائج فحص حجر الشك"الكیربستون"للطرق ومواقف السیارات</a></li>
-                    <li><a href="../03_checks/BitumenCheckResultsAddEdit.php"><i class="fa fa-circle-o"></i> Bitumen Test</a></li>
-                    <li><a href="../03_checks/asphaltCoreCheckResultsAddEdit.php"><i class="fa fa-circle-o"></i> Asphalt Core Testing</a></li>
-                    <li><a href="../03_checks/marshallCheckResultsAddEdit.php"><i class="fa fa-circle-o"></i> Mrshall Test</a></li>
-                    <li><a href="../03_checks/pavedTllesCompresslonCheckAddEdit.php"><i class="fa fa-circle-o"></i>  Paved Tiles Compression</a></li>
-                    <li><a href="../03_checks/californiaBearingRatioAddEdit.php"><i class="fa fa-circle-o"></i>  CaliforniaBearingRatio</a></li>
-                    <li><a href="../03_checks/ModifiedCompactionTestAddEdit.php"><i class="fa fa-circle-o"></i>ModifiedCompactionTest</a></li>
-                    <li><a href="../03_checks/calvorniaCarryingRatioAddEdit.php"><i class="fa fa-circle-o"></i>calvorniaCarryingRatio</a></li>
-                     <li><a href="../03_checks/schmidtHammreCheckAddEdit.php"><i class="fa fa-circle-o"></i>SCHMIDT HAMMER TEST</a></li>
-                    <li><a href="../03_checks/concreteCoreCompressionCheckAddEdit.php"><i class="fa fa-circle-o"></i>CONCRETE CORE COMPRESSION TEST</a></li>
-                       <li><a href="../03_checks/testResultsBlendedCementAddEdit.php"><i class="fa fa-circle-o"></i>TEST RESULTS OF BLENDED CEMENT</a></li>
-                  </ul>
-                  </li>
-              </ul>
-            </li>
-            <li class="treeview">
-              <a href="#">
-                <i class="fa fa-share"></i> <span>المختبرات</span>
-                <i class="fa fa-angle-left pull-left"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="../00_home/index.php"><i class="fa fa-circle-o"></i> مختبر المواد</a></li>
-                <li>
-                  <a href="#"><i class="fa fa-circle-o"></i> مختبر الباطون <i class="fa fa-angle-left pull-left"></i></a>
-                  <ul class="treeview-menu">
-                    <li><a href="../00_home/index.php"><i class="fa fa-circle-o"></i> البلاط</a></li>
-                    <li>
-                      <a href="#"><i class="fa fa-circle-o"></i> الخرسانة <i class="fa fa-angle-left pull-left"></i></a>
-                      <ul class="treeview-menu">
-                        <li><a href="../00_home/index.php"><i class="fa fa-circle-o"></i> أعمدة</a></li>
-                        <li><a href="../00_home/index.php"><i class="fa fa-circle-o"></i> أسطح</a></li>
-                      </ul>
-                    </li>
-                  </ul>
-                </li>
-                <li><a href="../Laboratories/plastics.php"><i class="fa fa-circle-o"></i> البلاستيك</a></li>
-              </ul>
-            </li>
-          </ul>
-        </section>
-        <!-- /.sidebar -->
-      </aside>
+                </div>
+            </header>
+            <!-- HEADER DESKTOP-->

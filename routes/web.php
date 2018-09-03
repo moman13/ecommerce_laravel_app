@@ -17,6 +17,6 @@ Route::get('/', function () {
 Route::get('/admin', function () {
     return view('admin.index');
 });
-Route::get('/test', function () {
-    return view('admin.index');
+Route::get('/admin/create', function () {
+    return view('admin.products.create');
 });
